@@ -47,9 +47,9 @@ val_u = np.ndarray.round(val_u, 8)
 
 #remove duplicate values
 val, idx = np.unique(val[val.imag != 0], return_index=True)
-vect = vect[idx]
+vect = vect[:, idx]
 val_u, idx_u = np.unique(val_u, return_index=True)
-vect_u = vect_u[idx_u]
+vect_u = vect_u[:, idx_u]
 
 #print eigvals and vects in arc
 idx_s = np.argsort(-val)#rev values to sort in descending order
